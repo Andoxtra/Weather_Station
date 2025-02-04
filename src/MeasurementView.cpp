@@ -38,12 +38,15 @@ void MeasurementView::show(){
 
     float minVal = sensor->getMinValue();
     float maxVal = sensor->getMaxValue();
+    float currentVal = sensor->getCurrentValue();
+
     graph->setMin(minVal);
     graph->setMax(maxVal);
-    graph->appendToGraphPoints(sensor->getCurrentValue());
+
+    graph->appendToGraphPoints(currentVal);
     graph->setGraphPositions();
-    //TODO: Find neet way to include LED with reading of sensor
-    led->setColor(20,20,20);
+
+    led->setColorByMeasurementData(currentVal, maxVal, minVal);
 
     display->drawHeadNumbers(minVal, maxVal, sensor->getAvgValue());
     display->drawMeasurementUnit(currentUnit);
