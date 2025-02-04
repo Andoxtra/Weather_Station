@@ -20,8 +20,6 @@ private:
     CharTable* characterTable = new CharTable();
     void drawCharacter(Character* charObject, short int x, short int y);
     void drawByStringAndPos(std::string* text, short int x, short int y);
-    ~Display(){delete display;};
-
 
 public:
     Display(uint8_t screenWidth, uint8_t screenHeight, uint8_t addr);
