@@ -7,10 +7,10 @@
 class RGBLed {
 public:
     RGBLed(short int PIN);
-    ~RGBLed(){delete object;};
     void setColor(short int r, short int g, short int b);
     void clear();
     void init();
+    void setColorByMeasurementData(float current, float max, float min);
 private:
     Adafruit_NeoPixel* object;
 };
