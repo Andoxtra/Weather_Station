@@ -10,7 +10,6 @@
 class BM280Sensor {
 private:
     Adafruit_BME280* sensorObject;
-    ~BM280Sensor(){delete sensorObject;};
     uint8_t sensorAddress{};
     char unit{};
     float min{};
